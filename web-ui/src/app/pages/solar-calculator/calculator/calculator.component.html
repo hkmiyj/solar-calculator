@@ -1,0 +1,79 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow">
+        <div class="card-header bg-dark text-white text-center">
+          <h4 class="fw-bolder">Solar Calculator</h4>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="calculateSavings()">
+            <!-- Name -->
+            <div class="mb-3">
+              <label class="form-label">Name <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" [(ngModel)]="name" name="name" placeholder="Enter your name" required>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="mb-3">
+              <label class="form-label">Phone Number <span class="text-danger">*</span></label>
+              <input type="number" class="form-control" [(ngModel)]="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" [(ngModel)]="email" name="email" placeholder="Enter your email">
+            </div>
+
+            <!-- Monthly TNB Bill Input -->
+            <div class="mb-3">
+              <label class="form-label">Monthly TNB Bill Amount (RM) <span class="text-danger">*</span></label>
+              <input type="number" class="form-control" [(ngModel)]="tnbBill" name="tnbBill" placeholder="Enter your bill amount" required>
+            </div>
+
+            <!-- Location Dropdown -->
+            <div class="mb-3">
+              <label class="form-label">Location (Optional)</label>
+              <select class="form-select" [(ngModel)]="location" name="location">
+                <option value="" selected>Select your state</option>
+                <option value="Johor">Johor</option>
+                <option value="Kedah">Kedah</option>
+                <option value="Kelantan">Kelantan</option>
+                <option value="Melaka">Melaka</option>
+                <option value="Negeri Sembilan">Negeri Sembilan</option>
+                <option value="Pahang">Pahang</option>
+                <option value="Penang">Penang</option>
+                <option value="Perak">Perak</option>
+                <option value="Perlis">Perlis</option>
+                <option value="Sabah">Sabah</option>
+                <option value="Sarawak">Sarawak</option>
+                <option value="Selangor">Selangor</option>
+                <option value="Terengganu">Terengganu</option>
+                <option value="Kuala Lumpur">Kuala Lumpur</option>
+                <option value="Labuan">Labuan</option>
+                <option value="Putrajaya">Putrajaya</option>
+              </select>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-dark w-100">Calculate Solar Savings</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Calculation Result (Visible Only After Submission) -->
+      <div *ngIf="calculated" class="card shadow mt-4">
+        <div class="card-header bg-success text-white text-center">
+          <h4 class="fw-bolder">Calculation Result</h4>
+        </div>
+        <div class="card-body text-center">
+          <p><strong>Monthly TNB Bill (RM):</strong> {{ tnbBill }}</p>
+          <p><strong>Location:</strong> {{ location || 'Not Provided' }}</p>
+          <p><strong>Estimated Savings (RM):</strong> {{ savings }}</p>
+
+          <button (click)="resetForm()" class="btn btn-primary">Go Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
