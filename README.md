@@ -1,1 +1,2 @@
-"# solar-calculator" 
+Using docker
+Run docker-compose up 

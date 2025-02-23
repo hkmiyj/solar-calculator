@@ -1,12 +1,14 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
+import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CalculatorComponent } from './pages/calculator/calculator.component';
 import { HomeComponent } from './pages/home/home.component';
-import { CalculatorComponent } from './pages/solar-calculator/calculator/calculator.component';
+
 
 @NgModule({
   declarations: [
@@ -16,9 +18,13 @@ import { CalculatorComponent } from './pages/solar-calculator/calculator/calcula
   ],
   imports: [
     BrowserModule,
-    FormsModule, 
+    FormsModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    NgbCarouselModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+
   ],
   providers: [
     provideClientHydration(withEventReplay())

@@ -1,42 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
 
 @font-face {
-    font-family: 'Corbel Light';
-    src: url('assets/fonts/Corbel-Light.TTF') format('truetype');
-  }
-  
+  font-family: 'Corbel Light';
+  src: url('assets/fonts/Corbel-Light.TTF') format('truetype');
+}
+
 :root {
-    --bs-primary: #fcd913; /* Yellow */
-    --bs-black: #000000;
-    --bs-ffffff: #fcd913;
-    --bs-grey: #919090;
-  }
-  
-  .bg-primary {
-    background-color: var(--bs-primary) !important;
-  }
-  
-  .text-primary {
-    color: var(--bs-primary) !important;
-  }
-  
-  .btn-primary {
-    background-color: var(--bs-primary) !important;
-    border-color: var(--bs-primary) !important;
-  }
-  
-  .btn-primary:hover {
-    background-color: darken(var(--bs-primary), 10%) !important;
-    border-color: darken(var(--bs-primary), 15%) !important;
-  }
+  --bs-primary: #fcd913;
+  /* Yellow */
+  --bs-black: #000000;
+  --bs-ffffff: #fcd913;
+  --bs-grey: #919090;
+}
 
-  body {
-    background-color: var(--bs-primary); /* Light grey background */
-  }
+.bg-primary {
+  background-color: var(--bs-primary) !important;
+}
 
-  body {
-    font-family: "Corbel Light", Arial, sans-serif;
-  }
-  
-  
-  
+.text-primary {
+  color: var(--bs-primary) !important;
+}
+
+.btn-primary {
+  background-color: var(--bs-primary) !important;
+  border-color: var(--bs-primary) !important;
+}
+
+.btn-primary:hover {
+  background-color: darken(var(--bs-primary), 10%) !important;
+  border-color: darken(var(--bs-primary), 15%) !important;
+}
+
+body {
+  background-color: var(--bs-black);
+}
+
+body {
+  font-family: "Corbel Light", Arial, sans-serif;
+}
+
+/* Fade-in and slide-up effect */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-leave {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.page-leave-active {
+  opacity: 0;
+  transform: translateY(-20px);
+}
